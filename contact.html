@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Anlord Jake Ynigo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Arial, sans-serif; }
+        body { background: linear-gradient(145deg, #f0f5fe 0%, #e6edf7 100%); color: #1e2b3c; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
+        nav {
+            display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem;
+            background: rgba(255,255,255,0.9); backdrop-filter: blur(12px);
+            padding: 1rem 2rem; box-shadow: 0 8px 20px rgba(0,45,80,0.1);
+            position: sticky; top: 0; z-index: 99; border-bottom: 2px solid #ffffff70;
+        }
+        nav a {
+            text-decoration: none; font-weight: 600; color: #1f3a5f;
+            padding: 0.25rem 0; position: relative; transition: color 0.2s;
+        }
+        nav a i { margin-right: 6px; font-size: 1rem; color: #2b6c9e; }
+        nav a.active { color: #0a4b78; font-weight: 700; }
+        nav a::after {
+            content: ''; position: absolute; width: 0; height: 3px;
+            background: #0f6b9e; left: 0; bottom: -6px; transition: 0.25s ease;
+        }
+        nav a:hover::after, nav a.active::after { width: 100%; }
+        header {
+            text-align: center; padding: 2.5rem 1rem;
+            background: linear-gradient(130deg, #285e8e, #1b4b72);
+            color: white; box-shadow: inset 0 -4px 8px rgba(0,0,0,0.1);
+        }
+        header h1 { font-size: 2.8rem; letter-spacing: 1px; }
+        header p { font-size: 1.3rem; opacity: 0.9; font-style: italic; }
+        main { max-width: 1100px; margin: 2.5rem auto; padding: 0 2rem; flex: 1; }
+        .card {
+            background: #ffffffdd; backdrop-filter: blur(4px);
+            border-radius: 32px; padding: 2rem; margin-bottom: 2.2rem;
+            box-shadow: 0 18px 35px -8px rgba(18, 52, 77, 0.2);
+            border: 1px solid rgba(255,255,255,0.6); transition: all 0.2s;
+        }
+        .card:hover { box-shadow: 0 22px 40px -10px #1d3e5e55; }
+        .card h2 { color: #124072; margin-bottom: 1rem; display: flex; align-items: center; gap: 8px; border-left: 6px solid #2a7ab0; padding-left: 1rem; }
+        .card h2 i { color: #1b5f8c; font-size: 1.8rem; }
+        .form-group { margin-bottom: 1.2rem; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 0.3rem; color: #1f4e73; }
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 0.75rem 1rem; border-radius: 40px;
+            border: 1px solid #b3cee6; background: white; font-size: 1rem;
+            transition: 0.2s; outline: none;
+        }
+        .form-group input:focus, .form-group textarea:focus { border-color: #0f5e8c; box-shadow: 0 0 0 3px #add0f0; }
+        .flex-row { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+        .btn {
+            background: #166b9d; color: white; border: none; padding: 0.75rem 2rem;
+            border-radius: 60px; font-weight: 600; cursor: pointer;
+            transition: 0.2s; box-shadow: 0 5px 12px #9fc1dd; display: inline-flex; align-items: center; gap: 8px;
+        }
+        .btn:hover { background: #0b4a70; transform: scale(1.02); }
+        .val-msg { font-size: 0.9rem; margin-top: 0.3rem; min-height: 1.6rem; color: #b13e3e; display: flex; align-items: center; gap: 5px; }
+        .val-msg.success { color: #1d7a4b; }
+        footer { text-align: center; padding: 2rem; font-size: 0.95rem; color: #2f607e; border-top: 2px solid white; background: #d9e8f3; }
+        @media (max-width: 650px) {
+            nav { gap: 1rem; flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="about.html"><i class="fas fa-user-graduate"></i> About</a>
+        <a href="projects.html"><i class="fas fa-code-branch"></i> Projects</a>
+        <a href="contact.html" class="active"><i class="fas fa-envelope"></i> Contact</a>
+        <a href="login.html"><i class="fas fa-lock"></i> Login / Register</a>
+    </nav>
+
+    <header>
+        <h1>Contact Me</h1>
+        <p>Let's Connect</p>
+    </header>
+
+    <main>
+        <div class="card">
+            <h2><i class="fas fa-paper-plane"></i> Get in Touch</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label>Your name <i class="fas fa-user"></i></label>
+                    <input type="text" id="contactName" placeholder="Anlord Jake" required>
+                </div>
+                <div class="form-group">
+                    <label>Email address</label>
+                    <input type="email" id="contactEmail" placeholder="jake@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea id="contactMsg" rows="4" placeholder="I'd like to connect..."></textarea>
+                </div>
+                <div class="flex-row">
+                    <button type="submit" class="btn"><i class="fas fa-check"></i> Send Message</button>
+                    <span id="contactFeedback" class="val-msg"></span>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <i class="fas fa-copyright"></i> 2025 Anlord Jake Ynigo — deployment ready: localhost/eduportfolio
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const nameInp = document.getElementById('contactName');
+            const emailInp = document.getElementById('contactEmail');
+            const msgInp = document.getElementById('contactMsg');
+            const feedback = document.getElementById('contactFeedback');
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                let nameVal = nameInp.value.trim();
+                let emailVal = emailInp.value.trim();
+                let msgVal = msgInp.value.trim();
+                
+                if (nameVal === '' || emailVal === '' || msgVal === '') {
+                    feedback.innerHTML = '<i class="fas fa-exclamation-triangle"></i> All fields required';
+                    feedback.classList.remove('success');
+                } else if (!emailVal.includes('@') || !emailVal.includes('.')) {
+                    feedback.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Valid email needed';
+                    feedback.classList.remove('success');
+                } else {
+                    feedback.innerHTML = '<i class="fas fa-check-circle"></i> Message sent (demo)';
+                    feedback.classList.add('success');
+                    
+                    // Optional: clear form
+                    // nameInp.value = ''; emailInp.value = ''; msgInp.value = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
