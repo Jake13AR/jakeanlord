@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Anlord Jake Ynigo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Arial, sans-serif; }
+        body { background: linear-gradient(145deg, #f0f5fe 0%, #e6edf7 100%); color: #1e2b3c; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
+        nav {
+            display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem;
+            background: rgba(255,255,255,0.9); backdrop-filter: blur(12px);
+            padding: 1rem 2rem; box-shadow: 0 8px 20px rgba(0,45,80,0.1);
+            position: sticky; top: 0; z-index: 99; border-bottom: 2px solid #ffffff70;
+        }
+        nav a {
+            text-decoration: none; font-weight: 600; color: #1f3a5f;
+            padding: 0.25rem 0; position: relative; transition: color 0.2s;
+        }
+        nav a i { margin-right: 6px; font-size: 1rem; color: #2b6c9e; }
+        nav a.active { color: #0a4b78; font-weight: 700; }
+        nav a::after {
+            content: ''; position: absolute; width: 0; height: 3px;
+            background: #0f6b9e; left: 0; bottom: -6px; transition: 0.25s ease;
+        }
+        nav a:hover::after, nav a.active::after { width: 100%; }
+        header {
+            text-align: center; padding: 2.5rem 1rem;
+            background: linear-gradient(130deg, #285e8e, #1b4b72);
+            color: white; box-shadow: inset 0 -4px 8px rgba(0,0,0,0.1);
+        }
+        header h1 { font-size: 2.8rem; letter-spacing: 1px; }
+        header p { font-size: 1.3rem; opacity: 0.9; font-style: italic; }
+        main { max-width: 1100px; margin: 2.5rem auto; padding: 0 2rem; flex: 1; }
+        .card {
+            background: #ffffffdd; backdrop-filter: blur(4px);
+            border-radius: 32px; padding: 2rem; margin-bottom: 2.2rem;
+            box-shadow: 0 18px 35px -8px rgba(18, 52, 77, 0.2);
+            border: 1px solid rgba(255,255,255,0.6); transition: all 0.2s;
+        }
+        .card:hover { box-shadow: 0 22px 40px -10px #1d3e5e55; }
+        .card h2 { color: #124072; margin-bottom: 1rem; display: flex; align-items: center; gap: 8px; border-left: 6px solid #2a7ab0; padding-left: 1rem; }
+        .card h2 i { color: #1b5f8c; font-size: 1.8rem; }
+        .profile {
+            display: flex; flex-direction: column; align-items: center;
+            background: white; border-radius: 60px; padding: 2rem 1.5rem;
+        }
+        .profile img {
+            width: 150px; height: 150px; border-radius: 50%;
+            object-fit: cover; border: 6px solid #256b9c; margin-bottom: 1rem;
+        }
+        .btn {
+            background: #166b9d; color: white; border: none; padding: 0.75rem 2rem;
+            border-radius: 60px; font-weight: 600; cursor: pointer;
+            transition: 0.2s; box-shadow: 0 5px 12px #9fc1dd; display: inline-flex; align-items: center; gap: 8px;
+        }
+        .btn:hover { background: #0b4a70; transform: scale(1.02); }
+        .small-note { font-size: 0.85rem; margin-top: 0.6rem; color: #275e86; }
+        audio { width: 100%; border-radius: 24px; margin-top: 0.8rem; }
+        footer { text-align: center; padding: 2rem; font-size: 0.95rem; color: #2f607e; border-top: 2px solid white; background: #d9e8f3; }
+        @media (max-width: 650px) {
+            nav { gap: 1rem; flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
+        <a href="about.html"><i class="fas fa-user-graduate"></i> About</a>
+        <a href="projects.html"><i class="fas fa-code-branch"></i> Projects</a>
+        <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+        <a href="login.html"><i class="fas fa-lock"></i> Login / Register</a>
+    </nav>
+
+    <header>
+        <h1>Anlord Jake Ynigo</h1>
+        <p>learning portfolio · enhanced with JS + DOM</p>
+    </header>
+
+    <main>
+        <div class="profile card">
+            <img src="anlord.jpg"
+                 alt="avatar placeholder">
+            <h2>Anlord Jake Ynigo</h2>
+            <p><i class="fas fa-map-pin"></i> future IT educator · web enthusiast</p>
+        </div>
+
+        <section class="card">
+            <h2><i class="fas fa-bullseye"></i> Welcome to my enhanced portfolio</h2>
+            <p>This page now includes interactive features: form validation, toggle sections, login simulation, and dynamic updates — all using vanilla JavaScript (DOM). Every requirement from lessons 4–6 is implemented. Use the login panel to test validation.</p>
+        </section>
+
+        <section class="card">
+            <h2><i class="fas fa-headphones-alt"></i> My Favorite Song</h2>
+            <audio controls src="Unconfirmed 578199.CRDOWNLOAD">Your browser does not support audio.</audio>
+            <p class="small-note"><i class="far fa-clock"></i></p>
+        </section>
+    </main>
+
+    <footer>
+        <i class="fas fa-copyright"></i> 2025 Anlord Jake Ynigo — deployment ready: localhost/eduportfolio
+    </footer>
+</body>
+</html>
